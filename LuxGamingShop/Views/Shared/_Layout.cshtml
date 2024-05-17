@@ -51,9 +51,10 @@
                         <ul class="nav">
                             <li><a asp-active-route="home" asp-action="index" asp-controller="home">Home</a></li>
                             <li><a asp-active-route="shop" asp-action="index" asp-controller="shop">Shop</a></li>
-                            <li><a href="product-details.html">Product Details</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">Sign In</a></li>
+                            <li><a asp-active-route="product" asp-action="index" asp-controller="product">Product</a></li>
+                            <li><a asp-active-route="contact" asp-action="index" asp-controller="contact">Contact</a></li>
+                            <li><a asp-active-route="sign" asp-action="index" asp-controller="sign">Sign In</</a></li>
+                           
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>

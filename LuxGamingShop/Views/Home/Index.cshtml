@@ -18,13 +18,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 offset-lg-2">
-                <div class="right-image">
-                    <img src="~/assets/images/banner-image.jpg" alt="">
-                    <span class="price">$22</span>
-                    <span class="offer">-40%</span>
-                </div>
-            </div>
+            @{
+                foreach (var banner in Model.Banners)
+                {
+                    <div class="col-lg-4 offset-lg-2">
+                        <div class="right-image">
+                            <img src="~/assets/images/@banner.Path" alt="">
+                            <span class="price">$22</span>
+                            <span class="offer">-40%</span>
+                        </div>
+                    </div>
+                }
+            }
         </div>
     </div>
 </div>
@@ -47,36 +52,7 @@
                     </div>
                 }
             }
-            @*   <div class="col-lg-3 col-md-6">
-            <a href="#">
-            <div class="item">
-            <div class="image">
-            <img src="~/assets/images/featured-02.png" alt="" style="max-width: 44px;">
-            </div>
-            <h4>User More</h4>
-            </div>
-            </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-            <a href="#">
-            <div class="item">
-            <div class="image">
-            <img src="~/assets/images/featured-03.png" alt="" style="max-width: 44px;">
-            </div>
-            <h4>Reply Ready</h4>
-            </div>
-            </a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-            <a href="#">
-            <div class="item">
-            <div class="image">
-            <img src="~/assets/images/featured-04.png" alt="" style="max-width: 44px;">
-            </div>
-            <h4>Easy Layout</h4>
-            </div>
-            </a>
-            </div> *@
+        
         </div>
     </div>
 </div>
@@ -95,58 +71,25 @@
                     <a href="shop.html">View All</a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/trending-01.jpg" alt=""></a>
-                        <span class="price"><em>$28</em>$20</span>
+          @{
+              foreach (var trending in Model.Trendings)
+                {
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="product-details.html"><img src="~/assets/images/@trending.Path" alt=""></a>
+                                <span class="price"><em>$28</em>$20</span>
+                            </div>
+                            <div class="down-content">
+                                <span class="category">@trending.CategoriesName</span>
+                                <h4>@trending.Tittle</h4>
+                                <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="down-content">
-                        <span class="category">Action</span>
-                        <h4>Assasin Creed</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/trending-02.jpg" alt=""></a>
-                        <span class="price">$44</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Action</span>
-                        <h4>Assasin Creed</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/trending-03.jpg" alt=""></a>
-                        <span class="price"><em>$64</em>$44</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Action</span>
-                        <h4>Assasin Creed</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/trending-04.jpg" alt=""></a>
-                        <span class="price">$32</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Action</span>
-                        <h4>Assasin Creed</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
+                }
+          }
+          
         </div>
     </div>
 </div>
