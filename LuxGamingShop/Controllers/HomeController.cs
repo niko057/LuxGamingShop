@@ -6,6 +6,14 @@ namespace LuxGamingShop.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _dbContext;
+        public HomeController(DataContext dataContext)
+        {
+            _dbContext = dataContext;
+        }
+
+       
+
         public IActionResult Index()
         {
             var features = new List<Feature>();
@@ -36,6 +44,8 @@ namespace LuxGamingShop.Controllers
             homeIndexVM.Gamings = gaming;
             homeIndexVM.Banners = banner;
             homeIndexVM.Trendings= trending;
+
+
 
             return View(homeIndexVM);
 
